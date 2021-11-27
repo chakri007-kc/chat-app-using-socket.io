@@ -30,7 +30,9 @@ const Main = () => {
 
     const joinRoom = (e) => {
         e.preventDefault();
-        socket.emit('join-room',room)
+        socket.emit('join-room',room,message => {
+            setlist([...list,message])
+        })
     }
 
     return (
